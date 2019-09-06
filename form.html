@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Javascript form</title>
+    <style>
+        .register {
+            border-radius: 4px;
+            border: 1px solid black;
+            width: 200px;
+            margin-left: 400px;
+        }
+        
+        input,
+        .register {
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<script>
+    function validateform() {
+        var firstname = document.forms["Registeration"]["FName"];
+        var lastname = document.forms["Registeration"]["LName"];
+        var emailaddress = document.forms["Registeration"]["email"];
+        var pwd = document.forms["Registeration"]["password"];
+        var mobilenumber = document.forms["Registeration"]["phonenumber"];
+
+        if (firstname.value == "") {
+            window.alert("Please enter first name.");
+            firstname.focus();
+            return false;
+        }
+
+        if (lastname.value == "") {
+            window.alert("Please enter last name.");
+            lastname.focus()
+            return false;
+        }
+
+        if (emailaddress.value == "") {
+            window.alert("Please enter email address properly.");
+            emailaddress.focus();
+            return false;
+        }
+
+        if (emailaddress.value.indexOf("@", 0) < 0) {
+            window.alert("Please enter email address properly.");
+            emailaddress.focus();
+            return false;
+        }
+
+        if (emailaddress.value.indexOf(".", 0) < 0) {
+            window.alert("Please enter email address properly.");
+            emailaddress.focus();
+            return false;
+        }
+
+        if (pwd.value == "") {
+            window.alert("Please enter the password.");
+            pwd.focus();
+            return false;
+        }
+
+        if (mobilenumber.value == "") {
+            window.alert("Please enter mobile number.");
+            mobilenumber.focus();
+            return false;
+        }
+    }
+</script>
+
+<body align="center">
+    <h1>Javascript Form Validation</h1><br>
+    <br>
+    <div class="register">
+        <form action="#" name="Registeration" onsubmit="return validateform()">
+            <input type="text" placeholder="First Name" name="FName"><br>
+            <br>
+            <input type="text" placeholder="Last Name" name="LName"><br>
+            <br>
+            <input type="text" placeholder="Email here" name="email"><br>
+            <br>
+            <input type="password" placeholder="Password" name="password"><br>
+            <br>
+            <input type="text" placeholder="Phone number" name="phonenumber"><br>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+
+</body>
+
+</html>
